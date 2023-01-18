@@ -5,12 +5,10 @@ codeunit 50143 "Workflow Response Handler Sriq"
     local procedure OnOpenDocument(RecRef: RecordRef; var Handled: Boolean);
     var
         ItemJnlLine: Record "Item Journal Line";
-
-
     Begin
         RecRef.SetTable(ItemJnlLine);
         ItemJnlLine."Approval Status" := ItemJnlLine."Approval Status"::open;
-        ItemJnlLine.Modify;
+        ItemJnlLine.Modify();
         Handled := true;
     end;
 
@@ -22,7 +20,7 @@ codeunit 50143 "Workflow Response Handler Sriq"
 
         RecRef.SetTable(ItemJnlLine);
         ItemJnlLine."Approval Status" := ItemJnlLine."Approval Status"::Released;
-        ItemJnlLine.Modify;
+        ItemJnlLine.Modify();
         Handled := true;
     end;
 
@@ -35,7 +33,7 @@ codeunit 50143 "Workflow Response Handler Sriq"
     Begin
         RecRef.SetTable(ItemJnlLine);
         ItemJnlLine."Approval Status" := ItemJnlLine."Approval Status"::"Pending Approval";
-        ItemJnlLine.Modify;
+        ItemJnlLine.Modify();
         IsHandled := true;
     end;
 
