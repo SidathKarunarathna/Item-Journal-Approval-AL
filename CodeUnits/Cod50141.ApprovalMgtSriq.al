@@ -17,6 +17,13 @@ codeunit 50141 "Approval Mgt Sriq"
             Error(NoWorkflowEnabledErr);
         exit(true);
     end;
+    procedure CheckItemJnlLineApprovalsWorkflowEnable2(var ItemJnlLine: Record "Item Journal Line"): Boolean
+    begin
+        if not IsItemJnlLineApprovalsWorkflowEnable(ItemJnlLine) then
+            exit(false)
+        else
+            exit(true);
+    end;
 
     procedure IsItemJnlLineApprovalsWorkflowEnable(var ItemJnlLine: Record "Item Journal Line"): Boolean
     var

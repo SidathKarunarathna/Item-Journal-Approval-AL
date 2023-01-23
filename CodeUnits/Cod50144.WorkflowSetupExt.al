@@ -44,6 +44,7 @@ codeunit 50144 "Workflow Setup Ext"
         ItemJnlLine.SetRange("Approval Status",Status);
         exit(StrSubstNo(ItemJnlLineTypeCondTxt, WorkflowSetup.Encode(ItemJnlLine.GetView(False))));
     end;
+    
 
 
     var

@@ -6,7 +6,7 @@ codeunit 50145 "Item Journal Event Subs"
         ApprovalMgt: Codeunit "Approval Mgt Sriq";
         NotRealesed:Boolean;
     begin
-        if ApprovalMgt.CheckItemJnlLineApprovalsWorkflowEnable(Rec) then begin
+        if ApprovalMgt.CheckItemJnlLineApprovalsWorkflowEnable2(Rec) then begin
             NotRealesed:=false;
             repeat 
                 if not (Rec."Approval Status" = Rec."Approval Status"::Released) then
